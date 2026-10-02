@@ -33,9 +33,19 @@ public class NotificacaoController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Notificacao>> listar() {
-        return ResponseEntity.ok(service.listar());
-    }
+public ResponseEntity<List<Notificacao>> listar(
+        @RequestParam(required = false) String agravo,
+        @RequestParam(required = false) String nomePaciente,
+        @RequestParam(defaultValue = "false") boolean duplicadas) {
+
+    return ResponseEntity.ok(
+            service.listar(
+                    agravo,
+                    nomePaciente,
+                    duplicadas
+            )
+    );
+}
 
     @GetMapping("/{id}")
     public ResponseEntity<Notificacao> buscarPorId(
