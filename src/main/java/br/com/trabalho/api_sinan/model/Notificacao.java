@@ -14,16 +14,16 @@ public class Notificacao {
 
     private Long id;
 
-    //RN01(verificação de dublicidade) 
+    //RN01(verificação de duplicidade) 
     private String agravo;
     private LocalDate dataNotificacao;
     private String nomePaciente;
     private LocalDate dataNascimento;
     private String nomeMae;
-    //RN02(Condicional)
+    //RN02(Campos com validação condicional)
     private Integer idade;
-    private Boolean gestante;
-
+    private String gestante;
+    private String sexo;
     //RN03(Residência)
     private String paisResidencia;
     private String ufResidencia;
@@ -68,8 +68,12 @@ public class Notificacao {
     }
 
 
-    public Boolean getGestante() {
+    public String getGestante() {
         return gestante;
+    }
+
+    public String getSexo() {
+        return sexo;
     }
 
 
@@ -116,8 +120,12 @@ public class Notificacao {
         this.idade = idade;
     }
 
-    public void setGestante(Boolean gestante) {
+    public void setGestante(String gestante) {
         this.gestante = gestante;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
     public void setPaisResidencia(String paisResidencia) {
