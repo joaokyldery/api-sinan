@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.time.LocalDate;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Notificacao {
@@ -14,16 +16,23 @@ public class Notificacao {
 
     private Long id;
 
-    //RN01(verificação de dublicidade) 
+    //RN01(verificação de duplicidade) 
+    @NotBlank(message = "O campo agravo é obrigatório")
     private String agravo;
+    
+    @NotNull(message = "O campo data de notificação é obrigatório")
     private LocalDate dataNotificacao;
+    
+    @NotBlank(message = "O campo nome do paciente é obrigatório")
     private String nomePaciente;
     private LocalDate dataNascimento;
     private String nomeMae;
-    //RN02(Condicional)
+    //RN02(Campos com validação condicional)
     private Integer idade;
-    private Boolean gestante;
+    private String gestante;
 
+    @NotBlank(message = "O campo sexo é obrigatório")
+    private String sexo;
     //RN03(Residência)
     private String paisResidencia;
     private String ufResidencia;
@@ -68,8 +77,12 @@ public class Notificacao {
     }
 
 
-    public Boolean getGestante() {
+    public String getGestante() {
         return gestante;
+    }
+
+    public String getSexo() {
+        return sexo;
     }
 
 
@@ -116,8 +129,12 @@ public class Notificacao {
         this.idade = idade;
     }
 
-    public void setGestante(Boolean gestante) {
+    public void setGestante(String gestante) {
         this.gestante = gestante;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
     public void setPaisResidencia(String paisResidencia) {
