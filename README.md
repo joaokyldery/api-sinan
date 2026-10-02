@@ -9,7 +9,7 @@ Trabalho prático desenvolvido para a disciplina de **Programação para a Web I
 
 ## 🚀 Tecnologias Utilizadas
 - Java 21 (LTS)
-- Spring Boot 3
+- Spring Boot 4.1.1
 - Spring Data JPA
 - Spring Boot Validation (Jakarta)
 - Base de dados H2 (Em memória)
@@ -20,5 +20,5 @@ Trabalho prático desenvolvido para a disciplina de **Programação para a Web I
 1. Certifica-te de que tens o **Java 21** instalado na tua máquina.
 2. Clona este repositório:
    ```bash
- git clone [https://github.com/joaokyldery/api-sinan.git](https://github.com/joaokyldery/api-sinan.git)
+ git clone [https://github.com/joaokyldery/api-sinan.git]
   ```
