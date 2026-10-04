@@ -53,8 +53,7 @@ function exibirMensagem(texto, tipo) {
 
     mensagem.textContent = texto;
 
-    mensagem.className =
-        alert ${tipo};
+    mensagem.className = "alert " + tipo;
 }
 
 function esconderMensagem() {
