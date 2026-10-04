@@ -29,3 +29,27 @@ do curso de Análise e Desenvolvimento de Sistemas do *IFPB Campus Cajazeiras*.
 
 ```bash
 git clone https://github.com/joaokyldery/api-sinan.git
+
+## Interface Web
+
+A aplicação também possui uma interface web desenvolvida em HTML, CSS e JavaScript puro.
+
+Com a aplicação em execução, acesse:
+
+- Página inicial: http://localhost:8080/
+- Cadastro: http://localhost:8080/cadastro.html
+- Consulta: http://localhost:8080/consulta.html
+
+A interface consome a API REST utilizando a função fetch do JavaScript.
+
+### Funcionalidades da interface
+
+A interface permite:
+
+- cadastrar notificações;
+- consultar notificações;
+- filtrar por agravo;
+- filtrar pelo nome do paciente;
+- consultar possíveis notificações duplicadas;
+- editar notificações;
+- excluir notificações.
