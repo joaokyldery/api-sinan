@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Consulta de Notificações</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="container nav">
+
+        <a class="brand" href="/">
+            SINAN
+        </a>
+
+        <nav>
+
+            <a href="/cadastro.html">
+                Cadastrar
+            </a>
+
+            <a class="active"
+               href="/consulta.html">
+                Consultar
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<main class="container page">
+
+    <div class="page-header">
+
+        <div>
+
+            <span class="tag">
+                Consulta
+            </span>
+
+            <h1>
+                Notificações
+            </h1>
+
+            <p>
+                Consulte os registros cadastrados
+                no sistema.
+            </p>
+
+        </div>
+
+        <a class="button primary"
+           href="/cadastro.html">
+            + Nova notificação
+        </a>
+
+    </div>
+
+    <section class="filter-card">
+
+        <form id="formFiltros">
+
+            <div class="filter-grid">
+
+                <div class="field">
+
+                    <label for="filtroAgravo">
+                        Agravo
+                    </label>
+
+                    <input
+                        id="filtroAgravo"
+                        type="text"
+                        placeholder="Ex.: Dengue">
+
+                </div>
+
+                <div class="field">
+
+                    <label for="filtroNome">
+                        Paciente
+                    </label>
+
+                    <input
+                        id="filtroNome"
+                        type="text"
+                        placeholder="Nome do paciente">
+
+                </div>
+
+                <label class="checkbox-field">
+
+                    <input
+                        id="filtroDuplicadas"
+                        type="checkbox">
+
+                    <span>
+                        Somente notificações duplicadas
+                    </span>
+
+                </label>
+
+            </div>
+
+            <div class="filter-actions">
+
+                <button
+                    class="button secondary"
+                    id="btnLimpar"
+                    type="button">
+                    Limpar
+                </button>
+
+                <button
+                    class="button primary"
+                    type="submit">
+                    Filtrar
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+    <div id="mensagem"
+         class="alert hidden">
+    </div>
+
+    <section class="table-card">
+
+        <div class="table-header">
+
+            <div>
+
+                <h2>Registros</h2>
+
+                <p id="contador">
+                    Carregando...
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Agravo</th>
+                    <th>Paciente</th>
+                    <th>Notificação</th>
+                    <th>Nascimento</th>
+                    <th>Residência</th>
+                    <th>Ações</th>
+                </tr>
+
+                </thead>
+
+                <tbody id="tabelaNotificacoes">
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div id="estadoVazio"
+             class="empty-state hidden">
+
+            <h3>
+                Nenhuma notificação encontrada
+            </h3>
+
+            <p>
+                Tente alterar os filtros ou
+                cadastre uma nova notificação.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="/js/api.js" defer></script>
+<script src="/js/consulta.js" defer></script>
+
+</body>
+</html>
