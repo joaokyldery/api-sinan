@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro de Notificação</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="container nav">
+
+        <a class="brand" href="/">
+            SINAN
+        </a>
+
+        <nav>
+
+            <a class="active"
+               href="/cadastro.html">
+                Cadastrar
+            </a>
+
+            <a href="/consulta.html">
+                Consultar
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<main class="container page">
+
+    <div class="page-header">
+
+        <div>
+
+            <span class="tag">
+                Notificação
+            </span>
+
+            <h1 id="tituloPagina">
+                Nova notificação
+            </h1>
+
+            <p>
+                Preencha os dados abaixo.
+            </p>
+
+        </div>
+
+        <a class="button secondary"
+           href="/consulta.html">
+
+            Voltar para consulta
+        </a>
+
+    </div>
+
+    <div id="mensagem"
+         class="alert hidden">
+    </div>
+
+    <form id="formNotificacao"
+          class="form-card">
+
+        <section class="form-section">
+
+            <div class="section-title">
+
+                <span>1</span>
+
+                <div>
+
+                    <h2>
+                        Dados da notificação
+                    </h2>
+
+                    <p>
+                        Informações principais do agravo.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="form-grid">
+
+                <div class="field">
+
+                    <label for="agravo">
+                        Agravo/doença *
+                    </label>
+
+                    <input
+                        id="agravo"
+                        type="text"
+                        required
+                        placeholder="Ex.: Dengue">
+
+                </div>
+
+                <div class="field">
+
+                    <label for="dataNotificacao">
+                        Data da notificação *
+                    </label>
+
+                    <input
+                        id="dataNotificacao"
+                        type="date"
+                        required>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="form-section">
+
+            <div class="section-title">
+
+                <span>2</span>
+
+                <div>
+
+                    <h2>Paciente</h2>
+
+                    <p>
+                        Dados pessoais utilizados
+                        na notificação.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="form-grid">
+
+                <div class="field full">
+
+                    <label for="nomePaciente">
+                        Nome do paciente *
+                    </label>
+
+                    <input
+                        id="nomePaciente"
+                        type="text"
+                        required
+                        placeholder="Nome completo">
+
+                </div>
+
+                <div class="field">
+
+                    <label for="dataNascimento">
+                        Data de nascimento
+                    </label>
+
+                    <input
+                        id="dataNascimento"
+                        type="date">
+
+                </div>
+
+                <div class="field">
+
+                    <label for="idade">
+                        Idade
+                    </label>
+
+                    <input
+                        id="idade"
+                        type="number"
+                        min="0"
+                        max="130"
+                        placeholder="Idade">
+
+                    <small>
+                        Obrigatória quando a data de
+                        nascimento não for informada.
+                    </small>
+
+                </div>
+
+                <div class="field full">
+
+                    <label for="nomeMae">
+                        Nome da mãe
+                    </label>
+
+                    <input
+                        id="nomeMae"
+                        type="text"
+                        placeholder="Nome completo da mãe">
+
+                </div>
+
+                <div class="field">
+
+                    <label for="sexo">
+                        Sexo *
+                    </label>
+
+                    <select id="sexo"
+                            required>
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option value="M">
+                            Masculino
+                        </option>
+
+                        <option value="F">
+                            Feminino
+                        </option>
+
+                        <option value="I">
+                            Ignorado
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="field">
+
+                    <label for="gestante">
+                        Gestante
+                    </label>
+
+                    <select id="gestante">
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option value="1_TRIMESTRE">
+                            1º trimestre
+                        </option>
+
+                        <option value="2_TRIMESTRE">
+                            2º trimestre
+                        </option>
+
+                        <option value="3_TRIMESTRE">
+                            3º trimestre
+                        </option>
+
+                        <option value="IDADE_GESTACIONAL_IGNORADA">
+                            Idade gestacional ignorada
+                        </option>
+
+                        <option value="NAO">
+                            Não gestante
+                        </option>
+
+                        <option value="NAO_SE_APLICA">
+                            Não se aplica
+                        </option>
+
+                        <option value="IGNORADO">
+                            Ignorado
+                        </option>
+
+                    </select>
+
+                    <small>
+                        Obrigatório quando o sexo
+                        informado for feminino.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="form-section">
+
+            <div class="section-title">
+
+                <span>3</span>
+
+                <div>
+
+                    <h2>Residência</h2>
+
+                    <p>
+                        Local de residência do paciente.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="form-grid">
+
+                <div class="field">
+
+                    <label for="paisResidencia">
+                        País
+                    </label>
+
+                    <input
+                        id="paisResidencia"
+                        type="text"
+                        value="Brasil"
+                        placeholder="Brasil">
+
+                </div>
+
+                <div class="field">
+
+                    <label for="ufResidencia">
+                        UF
+                    </label>
+
+                    <input
+                        id="ufResidencia"
+                        type="text"
+                        maxlength="2"
+                        placeholder="PB">
+
+                </div>
+
+                <div class="field full">
+
+                    <label for="municipioResidencia">
+                        Município
+                    </label>
+
+                    <input
+                        id="municipioResidencia"
+                        type="text"
+                        placeholder="Ex.: Sousa">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="form-actions">
+
+            <a class="button secondary"
+               href="/consulta.html">
+                Cancelar
+            </a>
+
+            <button
+                id="btnSalvar"
+                class="button primary"
+                type="submit">
+
+                Salvar notificação
+
+            </button>
+
+        </div>
+
+    </form>
+
+</main>
+
+<script src="/js/api.js" defer></script>
+<script src="/js/cadastro.js" defer></script>
+
+</body>
+</html>
